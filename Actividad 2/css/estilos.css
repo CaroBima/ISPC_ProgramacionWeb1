@@ -20,12 +20,52 @@ td {
 }
 
 body {
-  background-color: #f0a394;
+  background-color: #eec7c0;
   font-family: arial;
   color: rgb(7, 6, 6);
+  margin: 5% 2% 5% 2%;
 }
 
+/* -------------------------      Pie de página        --------------------- */
 #pie {
   margin: auto;
   text-align: center;
+}
+
+/* -------------------------            menu          --------------------- */
+.mainMenu {
+  background-color: #833941;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+  margin-top: 20px;
+}
+.mainMenu:hover {
+  background-color: #662938;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-child {
+  display: none;
+  background-color: #833941;
+  min-width: 200px;
+}
+
+.dropdown-child:hover {
+  display: none;
+  background-color: #b25351;
+  min-width: 200px;
+}
+
+.dropdown-child a {
+  color: #ffb680;
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown:hover .dropdown-child {
+  display: block;
 }
