@@ -15,15 +15,16 @@
     <header>
         <img src="images/banner.jpeg" width="100%" />
     </header>
+
     <!--Menú del sitio-->
-    <nav id="menu">
-        <div class="dropdown">
-            <button class="mainMenu">Menú</button>
-            <div class="dropdown-child">
-                <a href="index.html">Principal</a>
-                <a href="productos.html">Productos</a>
-            </div>
-        </div>
+    <nav>
+        <h2>Menú</h2>
+        <input id="toggle" type="checkbox" checked>
+        <ul>
+            <li><a href="index.html">Principal</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="Sobrenosotros.html">Contacto</a></li>
+        </ul>
     </nav>
 
     <h1 id="inicio">Bienvenido al sitio <del>oficial</del> del Universo Cinematográfico de Marvel</h1>
@@ -55,7 +56,7 @@
     </p>
 
     <!--Tabla generada para poner el enlace a las distintas fases-->
-    <table name="navegacion">
+    <table class="navegacion">
         <tr>
             <td>
                 Ir a:
@@ -72,7 +73,7 @@
         </tr>
     </table>
     <!-- Tabla que permite ver el título de la pelicula, una breve descripción, el poster y el enlace del trailer-->
-    <table border="1px" name="tablaFase1">
+    <table name="tablaFase1">
         <caption>
             <h3 id="fase1"> Fase 1 </h3>
         </caption>
@@ -308,7 +309,7 @@
 
     <br><br>
     <!--permite moverse entre las secciones de la página-->
-    <table nombre="navegacion">
+    <table class="navegacion">
         <tr>
             <td>
                 Ir a:
@@ -329,7 +330,7 @@
     </table>
     <br>
 
-    <table border="1px" name="tablaFase2">
+    <table name="tablaFase2">
         <caption>
             <h3 id="fase2"> Fase 2 </h3>
         </caption>
@@ -625,7 +626,7 @@
     </table>
     <br>
 
-    <table border="1px" name="tablaFase3y4">
+    <table name="tablaFase3y4">
         <caption>
             <h3 id="fase3y4"> Fase 3 y 4</h3>
         </caption>
