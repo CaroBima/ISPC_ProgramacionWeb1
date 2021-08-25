@@ -20,19 +20,44 @@ td {
 }
 
 body {
-  /*background-color: #dfbc96;*/
-  background-color: #dbd2d2;
+  /*background-color: #dfbc96; */
+  background-color: #e2dcdc;
   font-family: arial;
   color: rgb(7, 6, 6);
   margin: 5% 2% 5% 2%;
 }
 
-/* -------------------------      Pie de página        --------------------- */
-#pie {
-  margin: auto;
+/* -------------------------      Header        --------------------- */
+header {
   text-align: center;
+  background-color: #833941;
+  height: 250px;
+  width: 100%;
 }
 
+.encabezado {
+  display: flex;
+  justify-content: space-around;
+}
+.encabezado {
+  border: sienna;
+}
+
+/* -------------------------      Pie de página        --------------------- */
+footer {
+  text-align: center;
+  background-color: #833941;
+  height: 75px;
+  width: 100%;
+}
+
+.pie {
+  display: flex;
+  justify-content: space-around;
+}
+.pie {
+  border: sienna;
+}
 /* -------------------------            Menu          --------------------- */
 
 nav {
@@ -132,7 +157,7 @@ tbody tr:nth-child(odd) {
 }
 
 tbody tr:nth-child(even) {
-  background-color: #ea795c;
+  background-color: #cc644a;
 }
 
 tbody tr {
@@ -143,16 +168,6 @@ table {
   background-color: #7f363e;
 }
 
-.navegacion {
-  background-color: #dbd2d2;
-}
-
-caption {
-  font-family: "Rock Salt", cursive;
-  padding: 20px;
-  font-style: italic;
-  caption-side: bottom;
-  color: #666;
-  text-align: right;
-  letter-spacing: 1px;
+table #navegacion {
+  background-color: #777070;
 }

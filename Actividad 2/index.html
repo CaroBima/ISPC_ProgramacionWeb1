@@ -12,8 +12,8 @@
 
 <body>
 
-    <header>
-        <img src="images/banner.jpeg" width="100%" />
+    <header class="encabezado">
+        <img src="images/banner.jpeg" alt="Imagen de Marvel" />
     </header>
 
     <!--Menú del sitio-->
@@ -72,25 +72,21 @@
             </td>
         </tr>
     </table>
+
     <!-- Tabla que permite ver el título de la pelicula, una breve descripción, el poster y el enlace del trailer-->
-    <table name="tablaFase1">
+    <table class="tablaFase1">
         <caption>
             <h3 id="fase1"> Fase 1 </h3>
         </caption>
         <thead>
-            <th>Título</th>
-            <th>Sinopsis</th>
-            <th>Ficha Técnica</th>
-            <th>Afiche promocional</th>
-            <th>Trailer</th>
+            <tr>
+                <th>Título</th>
+                <th>Sinopsis</th>
+                <th>Ficha Técnica</th>
+                <th>Afiche promocional</th>
+                <th>Trailer</th>
+            </tr>
         </thead>
-        <tfoot>
-            <th>Título</th>
-            <th>Sinopsis</th>
-            <th>Ficha Técnica</th>
-            <th>Afiche promocional</th>
-            <th>Trailer</th>
-        </tfoot>
         <tbody>
             <!--Primera película fase 1-->
             <tr>
@@ -305,6 +301,15 @@
                 </td>
             </tr>
         </tbody>
+        <tfoot>
+            <tr>
+                <th>Título</th>
+                <th>Sinopsis</th>
+                <th>Ficha Técnica</th>
+                <th>Afiche promocional</th>
+                <th>Trailer</th>
+            </tr>
+        </tfoot>
     </table>
 
     <br><br>
@@ -1239,7 +1244,7 @@
 
 
     <footer>
-        <span id="pie">
+        <span class="pie">
             <p>Copyright &copy; Marvel Time 2021</p>
         </span>
     </footer>
