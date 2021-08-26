@@ -27,6 +27,13 @@ body {
   margin: 5% 2% 5% 2%;
 }
 
+img {
+  width: 100%;
+}
+
+.imgProducto {
+  width: 50%;
+}
 /* -------------------------      Header        --------------------- */
 header {
   text-align: center;
