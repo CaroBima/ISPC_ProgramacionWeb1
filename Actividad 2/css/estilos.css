@@ -1,13 +1,13 @@
 p {
   font-size: 12pt;
-  font-family: arial, helvetica;
+  font-family: arial, helvetica, roboto, "new times roman", lato;
   font-weight: normal;
 }
 
 h1 {
-  font-size: 36pt;
+  font-size: x-large;
+  color: #222;
   font-family: verdana, arial;
-  text-decoration: underline;
   text-align: center;
   /*background-color: Teal;*/
 }
@@ -27,6 +27,8 @@ body {
   margin: 5% 2% 5% 2%;
 }
 
+/* -------------------------      Imágenes       --------------------- */
+
 img {
   width: 100%;
 }
@@ -34,7 +36,16 @@ img {
 .imgProducto {
   width: 50%;
 }
+
+/* -------------------------      Párrafos        --------------------- */
+
+.parrafo {
+  line-height: 1.5;
+  text-indent: 2em;
+}
+
 /* -------------------------      Header        --------------------- */
+
 header {
   text-align: center;
   background-color: #833941;
@@ -180,8 +191,8 @@ table #navegacion {
 }
 
 /* -------------------------            Tablas  menu fases        --------------------- */
-.navegacion {
-  background-color: #e2dcdc;
+.navegacion td {
+  background-color: #7f363e;
   margin: auto;
   margin-top: 40px;
   position: relative;
@@ -244,4 +255,23 @@ table #navegacion {
   font-weight: 200;
   text-decoration: none;
   transition: color 0.3s;
+}
+
+/* -------------------------            Cajas      --------------------- */
+
+.cajaIzq {
+  border: 0.3em solid #833941;
+  background-color: #b25351;
+  color: #222;
+  padding: 0.2em;
+  margin: 5% 2% 5% 2%;
+  border-radius: 1em;
+}
+
+.cajaDer {
+  border: 0.3em solid #833941;
+  background-color: #cc644a;
+  padding: 0.2em;
+  margin: 5% 2% 5% 2%;
+  align-self: center;
 }
