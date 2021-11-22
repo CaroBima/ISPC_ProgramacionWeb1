@@ -150,21 +150,9 @@
 
 <?php
 if(isset($_POST['submit'])) { 
-    //conexión a la base de datos
-    define('DB_SERVER', 'localhost');
-    define('DB_USERNAME', 'root');
-    define('DB_PASSWORD', '');
-    define('DB_NAME', 'beerfriendsstocksystem');
-
-    //conccion a la base de datos
-    $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-
-    // verifico si se pudo hacer la conexion, si no da error
-    if($link === false){
-      die("ERROR: No se pudo realizar la conexión. " . mysqli_connect_error());
-    } 
+  
+    include("conexion.php");
     
-
     //traigo los valores de los input
     $nombre  = $_POST["inputNombre"];
     $apellido  = $_POST["inputApellido"];
@@ -178,7 +166,7 @@ if(isset($_POST['submit'])) {
 
     
  
-    $consulta = "INSERT INTO `usuario` (`idUsuario`, `nombre`, `apellido`, `telefono`, `fechaNacimiento`, `nombreUsuario`, `contrasenia`, `idTipoUsuario`) VALUES (NULL, '$nombre', '$apellido', '$telefono', '$fechaNac', '$email', ' $contra', ' $usuario');";
+    $consulta = "INSERT INTO `usuario` (`idUsuario`, `nombre`, `apellido`, `telefono`, `fechaNacimiento`, `nombreUsuario`, `contrasenia`, `idTipoUsuario`) VALUES (NULL, '$nombre', '$apellido', '$telefono', '$fechaNac', '$email', '$contra', '$usuario');";
     
     if (mysqli_query ($link, $consulta)){
         echo "<script> alert('Usuario registrado correctamente. A continuación podrá iniciar sesión'); </script>";

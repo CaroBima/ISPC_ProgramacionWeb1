@@ -50,21 +50,8 @@
     </main>
     <?php
         if(isset($_POST['submit'])) { 
-            //conexión a la base de datos
-            //include (“config.php”); 
-            //$idconex = cnn(); 
-            define('DB_SERVER', 'localhost');
-            define('DB_USERNAME', 'root');
-            define('DB_PASSWORD', '');
-            define('DB_NAME', 'beerfriendsstocksystem');
-
-            //conccion a la base de datos
-            $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-
-            // verifico si se pudo hacer la conexion, si no da error
-            if($link === false){
-              die("ERROR: No se pudo realizar la conexión. " . mysqli_connect_error());
-            } 
+            
+            include("conexion.php");
             
             //traigo los valores de los input
             $email = $_POST["email"];
@@ -76,7 +63,6 @@
             
             //si devuelve registros es que los datos coinciden
             if($registros -> num_rows > 0){
-              echo "<script> alert('hay registros'); </script>";
                 header("Location: index.php");
                 die();
             }else{
@@ -85,10 +71,6 @@
             }
           
             
-
-            echo "<script> alert('pasa del if'); </script>";
-
-
             mysql_free_result($id);
             mysql_close($idconex);
         }
