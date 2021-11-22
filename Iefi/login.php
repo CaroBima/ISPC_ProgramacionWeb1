@@ -73,17 +73,15 @@
             $consulta = "SELECT * FROM usuario WHERE nombreUsuario ='$email' AND contrasenia = '$contra';";
             $registros = mysqli_query($link, $consulta);
            
-            echo "<script> alert('antes del if'); </script>";
             
             //si devuelve registros es que los datos coinciden
             if($registros -> num_rows > 0){
               echo "<script> alert('hay registros'); </script>";
-                //header("Location: index.html");
+                header("Location: index.php");
                 die();
             }else{
-              echo "<script> alert('no hay registros'); </script>";
-                //echo "<script type='text/javascript'>alert('Lo sentimos, los datos ingresados son incorrectos');</script>";
-                die();
+              echo "<script type='text/javascript'>alert('Lo sentimos, los datos ingresados son incorrectos');</script>";
+              die();
             }
           
             
@@ -95,6 +93,8 @@
             mysql_close($idconex);
         }
     ?>
+
+    
   </body>
   
 </html>
