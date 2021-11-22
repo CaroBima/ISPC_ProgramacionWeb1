@@ -42,7 +42,7 @@
                 <i class="fas fa-lock"></i>
               </label>
             </div>
-            <a href="#">¿Necesitas una Cuenta?</a>
+            <a href="registroUsuarios.php">¿Necesitas una Cuenta?</a>
             <input type="submit" name="submit" value="Iniciar Sesión" class="btn-login" />
           </form>
         </div>

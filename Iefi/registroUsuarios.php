@@ -18,11 +18,9 @@
             <div class="login">
                 <div class="login-data">
                     <img src="assets/beer2.png" alt="" />
-
-
                     <!-- Formulario  -->
                     <div class="container-fluid col-12 border border-warning gx-5 p-5 border border-3 container-grey">
-                        <form action="SvRegistroUsuario" method="Post" class="row g-3 was-validated text-md-left text-white" id="registroDeUsuario" onsubmit="return validarRegUsuario()">
+                        <form action="<?=$_SERVER['PHP_SELF'];?>" method="Post" class="row g-3 was-validated text-md-left text-white" id="registroDeUsuario" onsubmit="return validarRegUsuario()">
                             <p class="h1" id="pRegistroUsuario">Registro de Usuario</p> 
                             <table class="table text-center">
                                 <tr>
@@ -130,8 +128,8 @@
                                             <label for="selectUsuario" class="form-label">Tipo de Usuario</label>
                                             <select name="selectUsuario" id="selectUsuario" class="form-select">
                                                 <option selected disabled value="">Seleccione tipo...</option>
-                                                <option value="Produccion">Usuario de Producción</option>
-                                                <option value="Almacen">Usuario de Almacén</option>
+                                                <option value="3">Usuario de Producción</option>
+                                                <option value="2">Usuario de Almacén</option>
                                             </select>
                                         </div>
                                     </td>
@@ -140,18 +138,62 @@
                             </table>
                             <br>
                             <div class="col-md-6">
-                                <button class="btn-login" type="submit" id="btnResumen" >Guardar</button>
+                            <input type="submit" name="submit" value="Guardar" class="btn-login" />
                             </div>
                         </form>
                     </div>
-
-
                     <!-- fin de Formulario  -->
-
 
                 </div>
             </div>
         </main>
+
+<?php
+if(isset($_POST['submit'])) { 
+    //conexión a la base de datos
+    define('DB_SERVER', 'localhost');
+    define('DB_USERNAME', 'root');
+    define('DB_PASSWORD', '');
+    define('DB_NAME', 'beerfriendsstocksystem');
+
+    //conccion a la base de datos
+    $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+    // verifico si se pudo hacer la conexion, si no da error
+    if($link === false){
+      die("ERROR: No se pudo realizar la conexión. " . mysqli_connect_error());
+    } 
+    
+
+    //traigo los valores de los input
+    $nombre  = $_POST["inputNombre"];
+    $apellido  = $_POST["inputApellido"];
+    $email = $_POST["inputEmail"];
+    $contra = $_POST["inputPassword"];
+    $telefono  = $_POST["inputTelefono"];
+    $direccion  = $_POST["inputDireccion"];
+    $fechaNac  = $_POST["inputFNacim"]; 
+    $provincia = $_POST["selectProvincia"]; 
+    $usuario = $_POST["selectUsuario"];
+
+    
+ 
+    $consulta = "INSERT INTO `usuario` (`idUsuario`, `nombre`, `apellido`, `telefono`, `fechaNacimiento`, `nombreUsuario`, `contrasenia`, `idTipoUsuario`) VALUES (NULL, '$nombre', '$apellido', '$telefono', '$fechaNac', '$email', ' $contra', ' $usuario');";
+    
+    if (mysqli_query ($link, $consulta)){
+        echo "<script> alert('Usuario registrado correctamente. A continuación podrá iniciar sesión'); </script>";
+        echo "<script type='text/javascript'>setTimeout( function() { window.location.href = 'login.php'; }, 500 );</script>";
+        die();
+        } else {
+            echo "<script> alert('No se pudo agregar el registro, intente nuevamente'); </script>";
+            }
+
+    }
+
+    mysqli_close($link);
+?>
+
+
     </body>
 </html>
 
